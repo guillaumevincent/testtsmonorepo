@@ -1,0 +1,16 @@
+{
+  "name": "awesome-sum-lib",
+  "version": "0.1.0",
+  "main": "./build/cjs/index.js",
+  "module": "./build/esm/index.js",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "test": "jest",
+    "clean": "rm -rf build",
+    "build": "yarn clean && yarn build:cjs && yarn build:esm",
+    "build:cjs": "tsc --module CommonJS --outDir build/cjs --declaration",
+    "build:esm": "tsc --module ESNext --outDir build/esm --declaration"
+  }
+}
